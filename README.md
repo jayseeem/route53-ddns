@@ -114,13 +114,12 @@ Example configuration for a Ubiquiti EdgeRouter:
             }
         }
 
-  set service dns dynamic interface eth0 service dyndns host-name your.hostname.com
-  set service dns dynamic interface eth0 service dyndns login route53-ddns
-  set service dns dynamic interface eth0 service dyndns password <password here>
-  set service dns dynamic interface eth0 service dyndns protocol dyndns2
-  set service dns dynamic interface eth0 service dyndns server 24ufed9k37.execute-api.us-east-2.amazonaws.com
-
-
+    set service dns dynamic interface eth0 service dyndns host-name your.hostname.com
+    set service dns dynamic interface eth0 service dyndns login route53-ddns
+    set service dns dynamic interface eth0 service dyndns password <password here>
+    set service dns dynamic interface eth0 service dyndns protocol dyndns2
+    set service dns dynamic interface eth0 service dyndns server 24ufed9k37.execute-api.us-east-2.amazonaws.com
+    
 
 ## Updating
 
