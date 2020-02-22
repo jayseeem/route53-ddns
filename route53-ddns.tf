@@ -56,7 +56,7 @@ resource "aws_lambda_function" "lambda" {
   handler          = "route53_ddns.handler"
   runtime          = "python2.7"
   filename         = "route53-ddns.zip"
-  source_code_hash = base64sha256(filebase64("route53-ddns.zip"))
+  source_code_hash = filebase64sha256("route53-ddns.zip")
   role             = aws_iam_role.role.arn
 
   environment {
@@ -72,7 +72,7 @@ resource "aws_lambda_function" "authorizer" {
   handler          = "route53_ddns_authorizer.handler"
   runtime          = "python2.7"
   filename         = "route53-ddns-authorizer.zip"
-  source_code_hash = base64sha256(filebase64("route53-ddns-authorizer.zip"))
+  source_code_hash = filebase64sha256("route53-ddns-authorizer.zip")
   role             = aws_iam_role.role.arn
 
   environment {
