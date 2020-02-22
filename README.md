@@ -1,7 +1,5 @@
 # Route 53 DynDNS API
 
-[![Build Status](https://travis-ci.org/claytononeill/route53-ddns.svg?branch=master)](https://travis-ci.org/claytononeill/route53-ddns)
-
 This project implements a DynDNS v2 API compatible front end for the AWS Route
 53 service.  This allows most consumer routers and any other DynDNS compatible
 clients to update `A` records in Route 53 hosted domains.
@@ -115,7 +113,15 @@ Example configuration for a Ubiquiti EdgeRouter:
                 }
             }
         }
-    
+
+  set service dns dynamic interface eth0 service dyndns host-name your.hostname.com
+  set service dns dynamic interface eth0 service dyndns login route53-ddns
+  set service dns dynamic interface eth0 service dyndns password <password here>
+  set service dns dynamic interface eth0 service dyndns protocol dyndns2
+  set service dns dynamic interface eth0 service dyndns server 24ufed9k37.execute-api.us-east-2.amazonaws.com
+
+
+
 ## Updating
 
 If you update this code, the simplest way to update is just to run `make`
@@ -202,5 +208,14 @@ installed just run `tox` to run both.
 
 ## Author
 
+May 16, 2017:
 Clayton O'Neill 
 <clayton@oneill.net>
+
+Jan 8, 2020:
+Eric Brisco
+https://github.com/erisco
+
+Feb 22, 2020:
+Justin Munzing
+justin@jcmunz.com
